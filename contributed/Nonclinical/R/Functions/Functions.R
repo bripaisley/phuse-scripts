@@ -52,9 +52,9 @@
 # Function to download all files from a GitHub folder
 # NOTE: this function requires the package: "httr"
 download.GitHub.folder <- function (
-    GitHubRepo="phuse-org/phuse-scripts"
-  , baseDirGitHub="https://github.com/phuse-org/phuse-scripts/raw/master"
-  , studyDir="data/send/PDS/Xpt") {
+    GitHubRepo="bripaisley/phuse-scripts-Lilly"
+  , baseDirGitHub="https://github.com/bripaisley/phuse-scripts-Lilly/blob/master/"
+  , studyDir="data/send/8409511") {
   req <- GET(paste('https://api.github.com/repos',GitHubRepo,'contents',studyDir,sep='/'))
   contents <- content(req,as='parsed')
   for (i in seq(length(contents))) {
@@ -66,9 +66,9 @@ download.GitHub.folder <- function (
 # Function to list all files from a GitHub folder
 # NOTE: this function requires the packages: "httr", "Hmisc" and "tools"
 load.GitHub.xpt.files <- function (
-  GitHubRepo="phuse-org/phuse-scripts",
-  baseDirGitHub="https://github.com/phuse-org/phuse-scripts/raw/master",
-  studyDir="data/send/PDS/Xpt",
+  GitHubRepo="bripaisley/phuse-scripts-Lilly",
+  baseDirGitHub="https://github.com/bripaisley/phuse-scripts-Lilly/blob/master/",
+  studyDir="data/send/8409511",
   domainsOfInterest=NULL,showProgress=F,
   authenticate=FALSE,User=NULL,Password=NULL) {
   if (authenticate==TRUE) {
@@ -106,7 +106,7 @@ load.GitHub.xpt.files <- function (
 
 # Function to create a list of R dataframes for each .xpt file
 # NOTE: this function requries the packages: "Hmisc" and "tools"
-load.xpt.files <- function(path="/lrlhps/c143390/For_Janice/8409511",domainsOfInterest=NULL,showProgress=F) {
+load.xpt.files <- function(path=getwd(),domainsOfInterest=NULL,showProgress=F) {
   xptFiles <- Sys.glob(paste(path,"*.xpt",sep='/'))
   if (!is.null(domainsOfInterest)) {
     domainsOfInterest <- paste(paste(path,'/',domainsOfInterest,'.xpt',sep=''))
@@ -171,8 +171,8 @@ subTable <- function(fields,names,rawData) {
 # NOTE: this function requries the package: "Hmisc"
 read.github.xpt.file <- function (
     fName
-  , bURL="https://raw.githubusercontent.com/phuse-org/phuse-scripts/master"
-  , fPath="data/send/PDS/Xpt"
+  , bURL="https://github.com/bripaisley/phuse-scripts-Lilly/blob/master/"
+  , fPath="data/send/8409511"
   , tDir=getwd() 
   ) {
   # bURL  = https://raw.githubusercontent.com/phuse-org/phuse-scripts/master
