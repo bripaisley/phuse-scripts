@@ -1,9 +1,9 @@
 # Function to download all files from a GitHub folder
 # NOTE: this function requires the package: "httr"
 download.GitHub.folder <- function (
-    GitHubRepo="bripaisley/phuse-scripts-Lilly"
-  , baseDirGitHub="https://github.com/bripaisley/phuse-scripts-Lilly/tree/master"
-  , studyDir="data/send/8409511") {
+    GitHubRepo="bripaisley/phuse-scripts-Lilly",
+    baseDirGitHub="https://github.com/bripaisley/phuse-scripts-Lilly/tree/master",
+    studyDir="data/send/8409511") {
   req <- GET(paste('https://api.github.com/repos',GitHubRepo,'contents',studyDir,sep='/'))
   contents <- content(req,as='parsed')
   for (i in seq(length(contents))) {
