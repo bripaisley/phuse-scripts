@@ -12,17 +12,17 @@ library(xml2)
 library(xslt)
 library(RCurl)
 
-GitHubPath <- 'https://github.com/bripaisley/phuse-scripts-Lilly/blob/master'
+GitHubPath <- 'https://github.com/bripaisley/phuse-scripts-Lilly/tree/master'
 
 dataPath <- 'data/send/8409511'
 # dataPath <- 'data/send/CJUGSEND00'
 functionPath <- 'contributed/Nonclinical/R/Functions/Functions.R'
 
-script <- getURL(paste(GitHubPath,functionPath,sep='/'), ssl.verifypeer = FALSE)
+#script <- getURL(paste(GitHubPath,functionPath,sep='/'), ssl.verifypeer = FALSE)
 
-eval(parse(text = script))
+#eval(parse(text = script))
 
-#source(paste(GitHubPath,functionPath,sep='/'))
+source(paste(GitHubPath,functionPath,sep='/'))
 
 #source('/lrlhps/users/c143390/For_Janice/Functions.R')
 #print(paste(GitHubPath,functionPath,sep='/'))
@@ -437,8 +437,8 @@ ui <- shinyUI(
                                      tabPanel('README',
                                               column(11,
                                                      conditionalPanel(condition="input.dataPath=='data/send/8409511'",
-                                                                      includeMarkdown('https://github.com/bripaisley/phuse-scripts-Lilly/blob/master/data/send/CDISC-Safety-Pharmacology-POC/readme.txt')
-                                                                      #includeMarkdown('https://raw.githubusercontent.com/phuse-org/phuse-scripts/master/data/send/CDISC-Safety-Pharmacology-POC/readme.txt')
+                                                                      includeMarkdown('https://github.com/bripaisley/phuse-scripts-Lilly/tree/master/data/send/CDISC-Safety-Pharmacology-POC/readme.txt')
+                                                                      #includeMarkdown('https://github.com/bripaisley/phuse-scripts-Lilly/tree/master/data/send/CDISC-Safety-Pharmacology-POC/readme.txt')
                                                      )
                                               )
                                      )
