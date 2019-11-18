@@ -2,7 +2,7 @@
 # NOTE: this function requires the package: "httr"
 download.GitHub.folder <- function (
     GitHubRepo="bripaisley/phuse-scripts-Lilly"
-  , baseDirGitHub="https://github.com/bripaisley/phuse-scripts-Lilly/blob/master"
+  , baseDirGitHub="https://github.com/bripaisley/phuse-scripts-Lilly/tree/master"
   , studyDir="data/send/8409511") {
   req <- GET(paste('https://api.github.com/repos',GitHubRepo,'contents',studyDir,sep='/'))
   contents <- content(req,as='parsed')
@@ -16,7 +16,7 @@ download.GitHub.folder <- function (
 # NOTE: this function requires the packages: "httr", "Hmisc" and "tools"
 load.GitHub.xpt.files <- function (
   GitHubRepo="bripaisley/phuse-scripts-Lilly",
-  baseDirGitHub="https://github.com/bripaisley/phuse-scripts-Lilly/blob/master",
+  baseDirGitHub="https://github.com/bripaisley/phuse-scripts-Lilly/tree/master",
   studyDir="data/send/8409511",
   domainsOfInterest=NULL,showProgress=F,
   authenticate=FALSE,User=NULL,Password=NULL) {
@@ -120,7 +120,7 @@ subTable <- function(fields,names,rawData) {
 # NOTE: this function requries the package: "Hmisc"
 read.github.xpt.file <- function (
     fName
-  , bURL="https://github.com/bripaisley/phuse-scripts-Lilly/blob/master"
+  , bURL="https://github.com/bripaisley/phuse-scripts-Lilly/tree/master"
   , fPath="data/send/8409511"
   , tDir=getwd() 
   ) {
